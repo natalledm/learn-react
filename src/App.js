@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import Api from "./Components/Api";
 import Main from './Components/Main';
 import Secret from './Components/Secret';
+import Checkbox from './Components/Checkbox';
 
 
 const dishesData = [
@@ -24,6 +25,7 @@ function App() {
     <div className="App">
       <Header name="Marta" />
       <Main dishes={dishObjects} authorized={false} />
+      <Checkbox />
       <Secret authorized={true}/>
       <Api login={'natalledm'} />
     </div>

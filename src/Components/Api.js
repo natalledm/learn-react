@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // api things
 // https://api.github.com/users/natalledm
+// JSON.stringify(data) = transforms the json object in a string
 
 
 export default function Api(props) {
@@ -14,7 +15,13 @@ export default function Api(props) {
   }, []);
 
   if (data) {
-    return <div>{JSON.stringify(data)}</div>
+    return (
+      <div>
+        <h3>{data.name}</h3>
+        <p>Url:  <a href={`${data.url}`}>Github api data</a></p>
+        
+      </div>
+    ); 
   } else {
     return <div>No data</div>
   }
