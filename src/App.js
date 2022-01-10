@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./Components/Header";
+import Api from "./Components/Api";
+import Main from './Components/Main';
+import Secret from './Components/Secret';
+
+
+const dishesData = [
+  "salmon with tomatoes",
+  "chicken al limone",
+  "tofu and vegetables",
+  "lemon"
+]
+
+const dishObjects = dishesData.map((dish, index) => ({ id: index, title: dish }))
+
+
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header name="Marta" />
+      <Main dishes={dishObjects} authorized={false} />
+      <Secret authorized={true}/>
+      <Api login={'natalledm'} />
     </div>
   );
 }
